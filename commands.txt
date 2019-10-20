@@ -1,0 +1,22 @@
+to init node packages:
+npm init -y
+
+npm install express
+
+for node live refresh:
+npm install nodemon
+add to scripts in package.json: "watch":"nodemon server"
+run by typing: npm run watch
+
+
+
+app.post('/create-item', (req, res) => {
+
+    db.conllection('items').insertOne({text: req.body.item},()=>{
+
+        res.send("Thanks for submitting the form now");
+
+    });
+    
+
+});
