@@ -61,10 +61,15 @@ app.get('/', (req,res) => {
 
 app.post('/create-item', (req, res) => {
 
+    //TODO: add db object connected to the mongoDB
+    db.conllection('items').insertOne({text: req.body.item},()=>{
+
+        res.send("Thanks for submitting the form now");
+
+    });
     
-    
-    res.send("Thanks for submitting the form now");
 
 });
+
 
 app.listen(3000);
