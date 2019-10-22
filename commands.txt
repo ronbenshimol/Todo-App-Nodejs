@@ -7,3 +7,6 @@ for node live refresh:
 npm install nodemon
 add to scripts in package.json: "watch":"nodemon server"
 run by typing: npm run watch
+
+to install mongodb package for nodejs:
+npm install mongodb

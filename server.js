@@ -1,6 +1,20 @@
 let express = require('express');
-
+let mongodb = require('mongodb');
 let app = express();
+
+let db;
+
+//todoAppUser
+//ron12345
+
+let connectionString = 'mongodb+srv://todoAppUser:ron12345@cluster0-jpvwu.mongodb.net/TodoApp?retryWrites=true&w=majority';
+mongodb.connect(connectionString, {useNewUrlParser: true}, (err, client) => {
+
+  db = client.db();
+  //start listening only after the connecting to the db
+  app.listen(3000);
+
+});
 
 app.use(express.urlencoded({extended:false}));
 
@@ -62,7 +76,7 @@ app.get('/', (req,res) => {
 app.post('/create-item', (req, res) => {
 
     //TODO: add db object connected to the mongoDB
-    db.conllection('items').insertOne({text: req.body.item},()=>{
+    db.collection('items').insertOne({text: req.body.item},()=>{
 
         res.send("Thanks for submitting the form now");
 
@@ -70,6 +84,3 @@ app.post('/create-item', (req, res) => {
     
 
 });
-
-
-app.listen(3000);
