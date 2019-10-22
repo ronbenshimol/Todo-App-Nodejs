@@ -10,3 +10,6 @@ run by typing: npm run watch
 
 to install mongodb package for nodejs:
 npm install mongodb
+
+sanitize-html provides a simple HTML sanitizer with a clear API:
+npm install sanitize-html
