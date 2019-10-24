@@ -1,6 +1,4 @@
-# Project Title
-
-Simple Todo App
+# Simple Todo App
 
 ## Built With
 
