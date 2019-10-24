@@ -4,6 +4,10 @@ let app = express();
 let sanitizeHTML = require('sanitize-html');
 
 let db;
+let port = process.env.PORT;
+if(port == null || port == ""){
+	port = 3000;
+}
 
 //Serving static files in Express
 app.use(express.static('public'));
@@ -13,7 +17,7 @@ mongodb.connect(connectionString, { useNewUrlParser: true }, (err, client) => {
 
 	db = client.db();
 	//start listening only after the connecting to the db
-	app.listen(3000);
+	app.listen(port);
 
 });
 
