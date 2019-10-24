@@ -37,7 +37,7 @@ function passwordProtected(req, res, next){
 	
 }
 
-app.use(passwordProtected);
+// app.use(passwordProtected);
 
 app.get('/', (req, res) => {
 
