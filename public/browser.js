@@ -44,6 +44,19 @@ document.addEventListener("click", (e) => {
         }
     }
 
+    //for deleting all:
+    if (e.target.classList.contains("delete-all")) {
+        if(confirm("Are you sure you want to delete all the items?")){
+            axios.post('/delete-all', {}).then(() => {
+                
+                document.getElementById('item-list').innerHTML = '';
+
+            }).catch(() => {
+                console.log("please try again later");
+            });
+        }
+    }
+
     //for updating:
     if (e.target.classList.contains("edit-me")) {
 

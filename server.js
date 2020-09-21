@@ -69,7 +69,7 @@ app.get('/', (req, res) => {
 				<ul id="item-list" class="list-group pb-5">
 
 				</ul>
-
+				<button style:" margin-top:-50px;" class="delete-all btn btn-danger btn-sm">Delete All</button>
 			  </div>
 
 			  <script>
@@ -117,3 +117,11 @@ app.post('/delete-item',(req, res) => {
 
 
 });
+
+app.post('/delete-all',(req, res) => {
+	db.collection('items').deleteMany({}, () => {
+		res.send("Success")
+	})
+
+});
+
