@@ -5,7 +5,3 @@
 * NodeJs
 * Express
 * MongoDB
-
-## Deployed to Heroku
-
-try my app [here](https://todoappx.herokuapp.com/)
